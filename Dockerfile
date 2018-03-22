@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-LABEL maintainer="Jeff Geerling"
+LABEL maintainer="Lukas Beranek"
 
 # Install dependencies.
 RUN apt-get update \
@@ -27,3 +27,7 @@ RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin
 
 # Install Ansible inventory file
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+#libcloud
+RUN easy_install pip
+RUN pip install apache-libcloud
