@@ -39,4 +39,4 @@ RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
 #libcloud
 RUN easy_install pip
-RUN pip install apache-libcloud
+RUN pip install apache-libcloud boto
